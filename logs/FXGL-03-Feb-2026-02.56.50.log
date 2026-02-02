@@ -1,0 +1,95 @@
+02:56:46.721 [main                     ] DEBUG Logger               - Configured Logger
+02:56:46.736 [main                     ] DEBUG GameApplication      - Logging settings
+Title: RainDrop Game
+Version: 1.0
+Width: 800
+Height: 600
+Fullscreen: false
+Intro: false
+Profiling: false
+Single step:false
+App Mode: DEVELOPER
+Menu Key: ESCAPE
+Stage Style: DECORATED
+Scene Factory: class com.almasb.fxgl.app.scene.SceneFactory
+
+02:56:47.508 [JavaFX Application Thread] DEBUG FXGLApplication      - Initializing FXGL
+02:56:47.514 [JavaFX Application Thread] INFO  Engine               - FXGL-17.2 (20.08.2022 16.50) on WINDOWS (J:25.0.1 FX:17.0.9)
+02:56:47.514 [JavaFX Application Thread] DEBUG Engine               - JRE Vendor Name: Oracle Corporation
+02:56:47.514 [JavaFX Application Thread] DEBUG Engine               - Running on OS: Windows 11 version 10.0
+02:56:47.515 [JavaFX Application Thread] DEBUG Engine               - Architecture: amd64
+02:56:47.515 [JavaFX Application Thread] INFO  Engine               - Source code and latest versions at: https://github.com/AlmasB/FXGL
+02:56:47.515 [JavaFX Application Thread] INFO  Engine               -       Ask questions and discuss at: https://github.com/AlmasB/FXGL/discussions
+02:56:47.515 [JavaFX Application Thread] INFO  Engine               -              Join the FXGL chat at: https://gitter.im/AlmasB/FXGL
+02:56:47.764 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Creating a JavaFX scene
+02:56:47.868 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Target settings size: 800.0 x 600.0
+02:56:47.869 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Scaled scene size:    800.0 x 600.0
+02:56:47.869 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Scaled ratio: (1.0, 1.0)
+02:56:47.871 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Set initial scene to FXGLStartupScene
+02:56:47.888 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Opening main window
+02:56:48.077 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Window border size: (14.66668701171875, 37.33331298828125)
+02:56:48.077 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Scaled size: 800.0 x 600.0
+02:56:48.077 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Scaled ratio: (1.0, 1.0)
+02:56:48.078 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Scene size: 800.0 x 600.0
+02:56:48.078 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Stage size: 814.6666870117188 x 637.3333129882812
+02:56:48.097 [FXGL Background Thread 1 ] DEBUG Engine               - Initializing environment variables
+02:56:48.208 [FXGL Background Thread 1 ] DEBUG FXGLAssetLoaderServi - User app class for loading assets: class raindrop.game.RainDrop
+02:56:48.210 [FXGL Background Thread 1 ] DEBUG GameApplicationServi - Applying CSS: fxgl_dark.css
+02:56:48.211 [FXGL Background Thread 1 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:/C:/Users/ASUS/.m2/repository/com/github/almasb/fxgl/17.2/fxgl-17.2.jar!/fxglassets/ui/css/fxgl_dark.css
+02:56:48.303 [FXGL Background Thread 1 ] DEBUG GameApplicationServi - Initializing application scenes
+02:56:48.375 [FXGL Background Thread 1 ] DEBUG GameWorld            - Game world initialized
+02:56:48.483 [FXGL Background Thread 1 ] DEBUG PhysicsWorld         - Physics world initialized: appHeight=600, physics.ppm=50.0
+02:56:48.486 [FXGL Background Thread 1 ] DEBUG PhysicsWorld         - Using strategy: BRUTE_FORCE
+02:56:48.493 [FXGL Background Thread 1 ] DEBUG GameScene            - Game scene initialized: 800x600
+02:56:48.518 [FXGL Background Thread 1 ] DEBUG FXGL.DefaultMenu     - createMenuBodyGameMenu()
+02:56:48.553 [FXGL Background Thread 1 ] DEBUG FXGL.DefaultMenu     - createOptionsMenu()
+02:56:48.579 [FXGL Background Thread 1 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:/C:/Users/ASUS/.m2/repository/com/github/almasb/fxgl/17.2/fxgl-17.2.jar!/fxglassets/textures/particles/smoke.png
+02:56:48.753 [FXGL Background Thread 1 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:/C:/Users/ASUS/.m2/repository/com/github/almasb/fxgl/17.2/fxgl-17.2.jar!/fxglassets/textures/particles/trace_horizontal.png
+02:56:48.815 [FXGL Background Thread 1 ] DEBUG GameApplicationServi - Application scenes initialized
+02:56:48.839 [FXGL Background Thread 1 ] DEBUG SystemBundleService  - Loading FXGL system data
+02:56:48.846 [FXGL Background Thread 1 ] DEBUG FileSystemAccess     - Reading from: C:\Users\ASUS\Documents\RainDrop2D\system\fxgl.bundle
+02:56:48.858 [FXGL Background Thread 1 ] DEBUG SystemBundleService  - Bundle FXGL: {}
+02:56:48.858 [FXGL Background Thread 1 ] DEBUG UpdaterService       - Checking for updates
+02:56:48.866 [FXGL Background Thread 4 ] DEBUG FXGLApplication      - Loading fonts
+02:56:48.867 [FXGL Background Thread 1 ] DEBUG FXGLApplication      - Loading default localization
+02:56:48.869 [FXGL Background Thread 4 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:/C:/Users/ASUS/.m2/repository/com/github/almasb/fxgl/17.2/fxgl-17.2.jar!/fxglassets/ui/fonts/VarelaRound-Regular.ttf
+02:56:48.869 [FXGL Background Thread 1 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:/C:/Users/ASUS/.m2/repository/com/github/almasb/fxgl/17.2/fxgl-17.2.jar!/fxglassets/languages/english.lang
+02:56:48.899 [FXGL Background Thread 1 ] INFO  FXGLApplication      - FXGL initialization took: 0.802 sec
+02:56:48.920 [JavaFX Application Thread] DEBUG Input                - Registered new binding: action0 - Left
+02:56:48.921 [JavaFX Application Thread] DEBUG Input                - Registered new binding: action1 - Right
+02:56:48.922 [JavaFX Application Thread] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:/C:/Users/ASUS/.m2/repository/com/github/almasb/fxgl/17.2/fxgl-17.2.jar!/fxglassets/textures/fxgl_icon.png
+02:56:48.939 [FXGL Background Thread 4 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:/C:/Users/ASUS/.m2/repository/com/github/almasb/fxgl/17.2/fxgl-17.2.jar!/fxglassets/ui/fonts/Abel-Regular.ttf
+02:56:48.946 [FXGL Background Thread 4 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:/C:/Users/ASUS/.m2/repository/com/github/almasb/fxgl/17.2/fxgl-17.2.jar!/fxglassets/ui/fonts/TerminalLandMono-Regular.otf
+02:56:48.954 [FXGL Background Thread 4 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:/C:/Users/ASUS/.m2/repository/com/github/almasb/fxgl/17.2/fxgl-17.2.jar!/fxglassets/ui/fonts/Courier-Prime.ttf
+02:56:48.964 [JavaFX Application Thread] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:/C:/Users/ASUS/.m2/repository/com/github/almasb/fxgl/17.2/fxgl-17.2.jar!/fxglassets/textures/fxgl_default_cursor.png
+02:56:48.968 [JavaFX Application Thread] DEBUG Input                - Registered new binding: Screenshot - CTRL+8
+02:56:48.969 [JavaFX Application Thread] DEBUG Input                - Registered new binding: System info dump - CTRL+9
+02:56:48.970 [JavaFX Application Thread] DEBUG Input                - Registered new binding: Restart - CTRL+R
+02:56:48.971 [JavaFX Application Thread] DEBUG Input                - Registered new binding: Toggle Debug Camera - CTRL+7
+02:56:48.976 [JavaFX Application Thread] DEBUG LoopRunner           - Starting loop
+02:56:48.976 [JavaFX Application Thread] DEBUG LoopRunner           - Initializing JavaFX AnimationTimerLoop
+02:56:48.979 [JavaFX Application Thread] DEBUG GameApplicationServi - Starting new game
+02:56:48.979 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+02:56:49.005 [JavaFX Application Thread] DEBUG GameApplicationServi - Removing overlay from FXGLStartupScene and adding to FXGLLoadingScene
+02:56:49.006 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - FXGLStartupScene -> FXGLLoadingScene
+02:56:49.006 [JavaFX Application Thread] DEBUG GameApplicationServi - Clearing previous game
+02:56:49.006 [JavaFX Application Thread] DEBUG GameScene            - Clearing game scene
+02:56:49.006 [JavaFX Application Thread] DEBUG GameWorld            - Clearing game world
+02:56:49.006 [JavaFX Application Thread] DEBUG PhysicsWorld         - Clearing physics world
+02:56:49.009 [FXGL Background Thread 4 ] DEBUG FXGLApplication      - Initializing game
+02:56:49.009 [JavaFX Application Thread] DEBUG FXGLApplication      - Registering font factories with UI factory
+02:56:49.013 [FXGL Background Thread 4 ] DEBUG FXGLAssetLoaderServi - Loading from file system: file:/C:/Users/ASUS/Documents/RainDrop2D/target/classes/assets/textures/bucket.png
+02:56:49.097 [FXGL Background Thread 4 ] INFO  FXGLApplication      - Game initialization took: 0.088 sec
+02:56:49.207 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+02:56:49.221 [JavaFX Application Thread] DEBUG GameApplicationServi - Removing overlay from FXGLLoadingScene and adding to GameScene
+02:56:49.222 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - FXGLLoadingScene -> GameScene
+02:56:49.701 [FXGL Background Thread 2 ] INFO  UpdaterService       - Your current version:  17.2
+02:56:49.703 [FXGL Background Thread 2 ] INFO  UpdaterService       - Latest stable version: 21.1
+02:56:50.229 [JavaFX Application Thread] DEBUG FXGLAssetLoaderServi - Loading from file system: file:/C:/Users/ASUS/Documents/RainDrop2D/target/classes/assets/textures/raindrop.png
+02:56:50.616 [JavaFX Application Thread] DEBUG FXGLApplication      - Exiting FXGL
+02:56:50.616 [JavaFX Application Thread] DEBUG LoopRunner           - Stopping loop
+02:56:50.616 [JavaFX Application Thread] DEBUG SystemBundleService  - Saving FXGL system data
+02:56:50.620 [JavaFX Application Thread] DEBUG FileSystemAccess     - Writing to: C:\Users\ASUS\Documents\RainDrop2D\system\fxgl.bundle
+02:56:50.624 [JavaFX Application Thread] DEBUG Async                - Shutting down background threads
+02:56:50.625 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Closing main window
+02:56:50.650 [JavaFX Application Thread] DEBUG Logger               - Closing Logger

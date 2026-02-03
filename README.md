@@ -109,7 +109,6 @@ hell2.0/
 ## Assets
 
 The game uses the following assets:
-- `background.jpg` - Game background
 - `bucket.png` - Player bucket sprite
 - `raindrop.png` - Raindrop sprite
 - `raincatch.wav` - Sound effect for catching raindrops

@@ -46,7 +46,7 @@ public class RainDrop extends GameApplication {
             FXGL.set("speedMultiplier", currentMultiplier + 0.05);
         }, Duration.seconds(3));
 
-        FXGL.runOnce(() -> showGameOver(), Duration.seconds(20));
+        FXGL.runOnce(() -> showGameOver(), Duration.seconds(30));
 
         FXGL.getEventBus().addEventHandler(DropMissedEvent.DROP_MISSED, event -> {
             onDropMissed();
@@ -108,7 +108,7 @@ public class RainDrop extends GameApplication {
                     return;
                 }
                 FXGL.inc("score", 1);
-                //sound here, but update later
+                FXGL.play("waterdrip.wav");
             }
         });
     }

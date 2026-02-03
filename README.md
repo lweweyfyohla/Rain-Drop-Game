@@ -84,8 +84,6 @@ The compiled JAR will be located in the `target/` directory.
 - **Java 11**: Programming language
 - **JavaFX 17.0.9**: UI framework
 - **FXGL 17.2**: Game engine for JavaFX
-- **Maven**: Build automation and dependency management
-- **JUnit 5**: Testing framework
 
 ## Project Structure
 
@@ -125,14 +123,6 @@ The game uses the following assets:
 ### End Game
 
 <img width="593" height="469" alt="image" src="https://github.com/user-attachments/assets/a953439d-7712-4a04-bd3f-b3d599707db9" />
-
-## Running Tests
-
-To run the test suite:
-
-```bash
-mvn test
-```
 
 ## Development
 

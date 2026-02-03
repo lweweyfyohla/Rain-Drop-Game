@@ -99,9 +99,16 @@ hell2.0/
 │       │           ├── DropMissedEvent.java   # Custom event for missed drops
 │       │           └── GameObjectType.java    # Game object type definitions
 │       └── resources/
-│           └── assets/                        # Game assets (images, sounds)
-├── pom.xml                                     # Maven configuration
-└── README.md                                   # This file
+│              └── assets/  
+│                      └── sounds
+│                              └── waterdrip.wav
+│                       └──textures
+│                              └──textures
+│                              └──bucket.png
+│
+│                                                          # Game assets (images, sounds)
+├── pom.xml                                                  # Maven configuration
+└── README.md                                                  # This file
 ```
 
 ## Assets

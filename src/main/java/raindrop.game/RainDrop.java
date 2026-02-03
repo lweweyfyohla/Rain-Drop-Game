@@ -33,7 +33,7 @@ public class RainDrop extends GameApplication {
 
         bucket = FXGL.entityBuilder()
                 .type(GameObjectType.BUCKET)
-                .at(351, 551)
+                .at(350, 550)
                 .viewWithBBox(FXGL.texture("bucket.png", 73, 83))
                 .with(new KeepOnScreenComponent())
                 .with(new CollidableComponent(true))
@@ -46,7 +46,7 @@ public class RainDrop extends GameApplication {
             FXGL.set("speedMultiplier", currentMultiplier + 0.05);
         }, Duration.seconds(3));
 
-        FXGL.runOnce(() -> showGameOver(), Duration.seconds(30));
+        FXGL.runOnce(() -> showGameOver(), Duration.seconds(20));
 
         FXGL.getEventBus().addEventHandler(DropMissedEvent.DROP_MISSED, event -> {
             onDropMissed();
@@ -61,7 +61,7 @@ public class RainDrop extends GameApplication {
         if (currentScore > 0) {
             FXGL.inc("score", -1);
             missedAtZeroScore = 0;
-
+        } else {
             missedAtZeroScore++;
             if (missedAtZeroScore >= 3) {
                 showGameOver();
@@ -108,6 +108,7 @@ public class RainDrop extends GameApplication {
                     return;
                 }
                 FXGL.inc("score", 1);
+                //sound here, but update later
             }
         });
     }

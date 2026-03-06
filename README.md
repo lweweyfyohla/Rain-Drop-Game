@@ -112,7 +112,6 @@ hell2.0/
 ```
 
 ## Assets
-
 The game uses the following assets:
 - `bucket.png` - Player bucket sprite
 - `raindrop.png` - Raindrop sprite
@@ -131,14 +130,21 @@ The game uses the following assets:
 
 <img width="593" height="469" alt="image" src="https://github.com/user-attachments/assets/a953439d-7712-4a04-bd3f-b3d599707db9" />
 
-## 📝 License
+## Resources 
+- `bucket.png` - from nano banana
+- `raindrop.png` - from nano banana
+- `goldenDrop` - from nano banana
+- `raincatch.wav` - from pixabay
+- `README` - helped by claude Sonnet 4.5
+- `Code Debug` - helped by claude Sonnet 4.5
+
+## License
 This project is open source and available for educational purposes.
 
-## 🤝 Contributing
+## Contributing
 Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
 
 ## Development
-
 To set up the development environment:
 1. Import the project into your favorite IDE (IntelliJ IDEA, Eclipse, VS Code)
 2. Ensure the Maven project is properly imported

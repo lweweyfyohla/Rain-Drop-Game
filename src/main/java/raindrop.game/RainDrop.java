@@ -6,6 +6,7 @@ import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.dsl.components.KeepOnScreenComponent;
 import com.almasb.fxgl.entity.Entity;
 import com.almasb.fxgl.entity.components.CollidableComponent;
+import com.almasb.fxgl.input.UserAction;
 import com.almasb.fxgl.physics.CollisionHandler;
 import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
@@ -14,9 +15,12 @@ import javafx.util.Duration;
 public class RainDrop extends GameApplication {
 
     private Entity bucket;
-    private double baseBucketSpeed = 15;
     private int missedAtZeroScore = 0;
     private boolean gameOver = false;
+    private double bucketA = 0;
+    private final double MAX_SPEED = 30.0;
+    private final double ACCEL = 0.35;
+    private final double DECEL = 0.10;
 
     @Override
     protected void initSettings(GameSettings settings) {
@@ -24,6 +28,41 @@ public class RainDrop extends GameApplication {
         settings.setHeight(600);
         settings.setTitle("RainDrop Game");
         settings.setVersion("1.0");
+    }
+
+    @Override
+    protected void initInput() {
+        FXGL.getInput().addAction(new UserAction("Left") {
+            @Override
+            protected void onAction() {
+                bucketA -= ACCEL;
+                if (bucketA < -MAX_SPEED) bucketA = -MAX_SPEED;
+            }
+
+            @Override
+            protected void onActionEnd() {
+                if (bucketA < 0) bucketA = 0;
+            }
+        }, KeyCode.LEFT);
+
+        FXGL.getInput().addAction(new UserAction("Right") {
+            @Override
+            protected void onAction() {
+                bucketA += ACCEL;
+                if (bucketA > MAX_SPEED) bucketA = MAX_SPEED;
+            }
+
+            @Override
+            protected void onActionEnd() {
+                if (bucketA > 0) bucketA = 0;
+            }
+        }, KeyCode.RIGHT);
+    }
+
+    @Override
+    protected void onUpdate(double tpf) {
+        if (Math.abs(bucketA) < DECEL) bucketA = 0;
+        bucket.translateX(bucketA);
     }
 
     @Override
@@ -48,9 +87,7 @@ public class RainDrop extends GameApplication {
 
         FXGL.runOnce(() -> showGameOver(), Duration.seconds(30));
 
-        FXGL.getEventBus().addEventHandler(DropMissedEvent.DROP_MISSED, event -> {
-            onDropMissed();
-        });
+        FXGL.getEventBus().addEventHandler(DropMissedEvent.DROP_MISSED, event -> onDropMissed());
     }
 
     private void onDropMissed() {
@@ -87,26 +124,12 @@ public class RainDrop extends GameApplication {
         });
     }
 
-    private double getBucketSpeed() {
-        double speedMultiplier = FXGL.getd("speedMultiplier");
-        return baseBucketSpeed * speedMultiplier;
-    }
-
-    @Override
-    protected void initInput() {
-        FXGL.onKey(KeyCode.LEFT, () -> bucket.translateX(-getBucketSpeed()));
-        FXGL.onKey(KeyCode.RIGHT, () -> bucket.translateX(getBucketSpeed()));
-    }
-
     @Override
     protected void initPhysics() {
         FXGL.getPhysicsWorld().addCollisionHandler(new CollisionHandler(GameObjectType.BUCKET, GameObjectType.DROP) {
             @Override
             protected void onCollisionBegin(Entity bucket, Entity drop) {
                 drop.removeFromWorld();
-                if (drop.getY() > 517) {
-                    return;
-                }
                 FXGL.inc("score", 1);
                 FXGL.play("waterdrip.wav");
             }

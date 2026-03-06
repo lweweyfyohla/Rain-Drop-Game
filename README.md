@@ -131,10 +131,17 @@ The game uses the following assets:
 
 <img width="593" height="469" alt="image" src="https://github.com/user-attachments/assets/a953439d-7712-4a04-bd3f-b3d599707db9" />
 
-## 📝 License
+## License
 This project is open source and available for educational purposes.
 
-## 🤝 Contributing
+## Using AI
+- `bucket.png` - from google ai studio
+- `raindrop.png` - from google ai studio
+- `raincatch.wav` - from pixabay
+- `README` - help with Copilot
+- `Code Debug` - Cluade 
+
+## Contributing
 Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
 
 ## Development

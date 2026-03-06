@@ -131,12 +131,12 @@ The game uses the following assets:
 <img width="593" height="469" alt="image" src="https://github.com/user-attachments/assets/a953439d-7712-4a04-bd3f-b3d599707db9" />
 
 ## Resources 
-- `bucket.png` - from nano banana
-- `raindrop.png` - from nano banana
-- `goldenDrop` - from nano banana
-- `raincatch.wav` - from pixabay
-- `README` - helped by claude Sonnet 4.5
-- `Code Debug` - helped by claude Sonnet 4.5
+- `bucket.png` - from Nano Banana
+- `raindrop.png` - from Nano Banana
+- `goldenDrop` - from Nano Banana
+- `raincatch.wav` - from Pixabay
+- `README.md` - helped by Claude Sonnet 4.5
+- `Code Debug` - helped by Claude Sonnet 4.5
 
 ## License
 This project is open source and available for educational purposes.

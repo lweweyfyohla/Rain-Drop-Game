@@ -78,13 +78,8 @@ public class RainDrop extends GameApplication {
                 .with(new CollidableComponent(true))
                 .buildAndAttach();
 
-        // Spawn normal drops every second
         FXGL.run(() -> spawnDrop(), Duration.seconds(1));
-
-        // Spawn golden drop every 10 seconds
         FXGL.run(() -> spawnGoldenDrop(), Duration.seconds(10));
-
-        // Increase speed every 3 seconds
         FXGL.run(() -> {
             double currentMultiplier = FXGL.getd("speedMultiplier");
             FXGL.set("speedMultiplier", currentMultiplier + 0.05);
@@ -159,7 +154,6 @@ public class RainDrop extends GameApplication {
 
     @Override
     protected void initPhysics() {
-        // Normal drop collision — +1 point
         FXGL.getPhysicsWorld().addCollisionHandler(new CollisionHandler(GameObjectType.BUCKET, GameObjectType.DROP) {
             @Override
             protected void onCollisionBegin(Entity bucket, Entity drop) {
@@ -169,7 +163,6 @@ public class RainDrop extends GameApplication {
             }
         });
 
-        // Golden drop collision — +5 points
         FXGL.getPhysicsWorld().addCollisionHandler(new CollisionHandler(GameObjectType.BUCKET, GameObjectType.GOLDEN_DROP) {
             @Override
             protected void onCollisionBegin(Entity bucket, Entity goldenDrop) {

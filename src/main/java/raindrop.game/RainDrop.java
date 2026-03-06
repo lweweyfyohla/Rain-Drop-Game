@@ -95,6 +95,23 @@ public class RainDrop extends GameApplication {
                 .buildAndAttach();
     }
 
+    private void triggerGoldenBurst(double spawnX) {
+        for (int i = 0; i < 10; i++) {
+            final int index = i;
+            FXGL.runOnce(() -> {
+                if (!gameOver) {
+                    FXGL.entityBuilder()
+                            .type(GameObjectType.DROP)
+                            .at(spawnX, 0)
+                            .viewWithBBox(FXGL.texture("raindrop.png", 23, 43))
+                            .with(new DropMovement())
+                            .with(new CollidableComponent(true))
+                            .buildAndAttach();
+                }
+            }, Duration.seconds(index * 0.2));
+        }
+    }
+
     private void showGameOver() {
         if (gameOver) return;
         gameOver = true;
@@ -133,12 +150,14 @@ public class RainDrop extends GameApplication {
         FXGL.getPhysicsWorld().addCollisionHandler(new CollisionHandler(GameObjectType.BUCKET, GameObjectType.GOLDEN_DROP) {
             @Override
             protected void onCollisionBegin(Entity bucket, Entity goldenDrop) {
+                double spawnX = goldenDrop.getX();
                 goldenDrop.removeFromWorld();
                 if (goldenDrop.getY() > 517) {
                     return;
                 }
                 FXGL.inc("score", 5);
                 FXGL.play("waterdrip.wav");
+                triggerGoldenBurst(spawnX);
             }
         });
     }

@@ -39,8 +39,13 @@ public class RainDrop extends GameApplication {
                 .with(new CollidableComponent(true))
                 .buildAndAttach();
 
+        // Spawn normal drops every second
         FXGL.run(() -> spawnDrop(), Duration.seconds(1));
 
+        // Spawn golden drop every 10 seconds
+        FXGL.run(() -> spawnGoldenDrop(), Duration.seconds(10));
+
+        // Increase speed every 3 seconds
         FXGL.run(() -> {
             double currentMultiplier = FXGL.getd("speedMultiplier");
             FXGL.set("speedMultiplier", currentMultiplier + 0.05);
@@ -79,6 +84,34 @@ public class RainDrop extends GameApplication {
                 .buildAndAttach();
     }
 
+    private void spawnGoldenDrop() {
+        if (gameOver) return;
+        FXGL.entityBuilder()
+                .type(GameObjectType.GOLDEN_DROP)
+                .at(FXGL.random(0, 780), 0)
+                .viewWithBBox(FXGL.texture("goldendrop.png", 23, 43))
+                .with(new DropMovement())
+                .with(new CollidableComponent(true))
+                .buildAndAttach();
+    }
+
+    private void triggerGoldenBurst(double spawnX) {
+        for (int i = 0; i < 10; i++) {
+            final int index = i;
+            FXGL.runOnce(() -> {
+                if (!gameOver) {
+                    FXGL.entityBuilder()
+                            .type(GameObjectType.DROP)
+                            .at(spawnX, 0)
+                            .viewWithBBox(FXGL.texture("raindrop.png", 23, 43))
+                            .with(new DropMovement())
+                            .with(new CollidableComponent(true))
+                            .buildAndAttach();
+                }
+            }, Duration.seconds(index * 0.2));
+        }
+    }
+
     private void showGameOver() {
         if (gameOver) return;
         gameOver = true;
@@ -100,6 +133,7 @@ public class RainDrop extends GameApplication {
 
     @Override
     protected void initPhysics() {
+        // Normal drop collision — +1 point
         FXGL.getPhysicsWorld().addCollisionHandler(new CollisionHandler(GameObjectType.BUCKET, GameObjectType.DROP) {
             @Override
             protected void onCollisionBegin(Entity bucket, Entity drop) {
@@ -109,6 +143,21 @@ public class RainDrop extends GameApplication {
                 }
                 FXGL.inc("score", 1);
                 FXGL.play("waterdrip.wav");
+            }
+        });
+
+        // Golden drop collision — +5 points
+        FXGL.getPhysicsWorld().addCollisionHandler(new CollisionHandler(GameObjectType.BUCKET, GameObjectType.GOLDEN_DROP) {
+            @Override
+            protected void onCollisionBegin(Entity bucket, Entity goldenDrop) {
+                double spawnX = goldenDrop.getX();
+                goldenDrop.removeFromWorld();
+                if (goldenDrop.getY() > 517) {
+                    return;
+                }
+                FXGL.inc("score", 5);
+                FXGL.play("waterdrip.wav");
+                triggerGoldenBurst(spawnX);
             }
         });
     }

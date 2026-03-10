@@ -6,6 +6,8 @@ A simple 2D game built with JavaFX and FXGL game engine where you catch falling 
 
 RainDrop is a classic arcade game where the player controls a bucket to catch falling raindrops. The game progressively gets more challenging as the speed increases over time. Miss too many drops and it's game over!
 
+> **AI Disclosure:** This README, the code debugging process, and the Maven configuration (`pom.xml`) were assisted by **Claude Sonnet** (Anthropic). AI was used to help structure the project setup, troubleshoot runtime issues, and write this documentation.
+
 ## Features
 
 - **Simple Controls**: Use arrow keys to move the bucket left and right
@@ -42,8 +44,8 @@ mvn -version
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/lweweyfyohla/hell2.0.git
-   cd hell2.0
+   git clone https://github.com/lweweyfyohla/Rain-Drop-Game.git
+   cd Rain-Drop-Game
    ```
 
 2. **Install dependencies**
@@ -88,34 +90,35 @@ The compiled JAR will be located in the `target/` directory.
 ## Project Structure
 
 ```
-hell2.0/
+Rain-Drop-Game/
 ├── src/
 │   └── main/
 │       ├── java/
-│       │   └── raindrop/
-│       │       └── game/
-│       │           ├── RainDrop.java          # Main game class
-│       │           ├── DropMovement.java      # Drop movement component
-│       │           ├── DropMissedEvent.java   # Custom event for missed drops
-│       │           └── GameObjectType.java    # Game object type definitions
+│       │   └── raindrop.game/
+│       │       ├── RainDrop.java          # Main game class
+│       │       ├── DropMovement.java      # Drop movement component
+│       │       ├── DropMissedEvent.java   # Custom event for missed drops
+│       │       └── GameObjectType.java    # Game object type definitions
 │       └── resources/
 │              └── assets/  
-│                      └── sounds
+│                      └── sounds/
 │                              └── waterdrip.wav
-│                       └──textures
-│                              └──textures
-│                              └──bucket.png
+│                      └── textures/
+│                              └── bucket.png
+│                              └── raindrop.png
+│                              └── goldenDrop.png
 │
-│                                                          # Game assets (images, sounds)
-├── pom.xml                                                  # Maven configuration
-└── README.md                                                  # This file
+├── system/                                                      # FXGL system data
+├── pom.xml                                                      # Maven configuration
+└── README.md                                                    # This file
 ```
 
 ## Assets
 The game uses the following assets:
 - `bucket.png` - Player bucket sprite
 - `raindrop.png` - Raindrop sprite
-- `raincatch.wav` - Sound effect for catching raindrops
+- `goldenDrop.png` - Golden raindrop sprite
+- `waterdrip.wav` - Sound effect for catching raindrops
 
 ## Screenshot
 ### Start the Game
@@ -130,13 +133,18 @@ The game uses the following assets:
 
 <img width="593" height="469" alt="image" src="https://github.com/user-attachments/assets/a953439d-7712-4a04-bd3f-b3d599707db9" />
 
-## Resources 
+## Resources
+### Asset Credits
 - `bucket.png` - from Nano Banana
 - `raindrop.png` - from Nano Banana
-- `goldenDrop` - from Nano Banana
-- `raincatch.wav` - from Pixabay
-- `README.md` - helped by Claude Sonnet 4.5
-- `Code Debug` - helped by Claude Sonnet 4.5
+- `goldenDrop.png` - from Nano Banana
+- `waterdrip.wav` - from Pixabay
+
+### Acknowledgments
+This project was developed with assistance from **Claude Sonnet** (Anthropic AI):
+- **README.md** - written with AI assistance
+- **Code Debugging** - runtime issues diagnosed and fixed with AI assistance
+- **Maven Configuration (`pom.xml`)** - project setup and dependency configuration assisted by AI
 
 ## License
 This project is open source and available for educational purposes.
